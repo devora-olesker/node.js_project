@@ -29,7 +29,6 @@ const DoctorsSchema = mongoose.Schema({
         }
     },
 
-
     phone: {
         type: String,
         validate: {

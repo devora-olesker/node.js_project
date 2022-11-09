@@ -4,4 +4,5 @@ const visit = {
     "date": String,
     "time": String
 }
+
 module.exports = visit;

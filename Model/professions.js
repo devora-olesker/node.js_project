@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const ProfessionsSchema = mongoose.Schema({
-
     id_profession: {
         type: Number,
         require
@@ -11,9 +10,6 @@ const ProfessionsSchema = mongoose.Schema({
         type: String,
         require
     },
-
-
 })
-
 
 module.exports = mongoose.model('professions', ProfessionsSchema, 'professions')

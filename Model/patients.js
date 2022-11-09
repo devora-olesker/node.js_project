@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 const visit=require("./visit")
+
 function isValidIsraeliID(id) {
     var id = String(id).trim();
     if (id.length > 9 || id.length < 5 || isNaN(id)) return false;
-
     // Pad string with zeros up to 9 digits
     id = id.length < 9 ? ("00000000" + id).slice(-9) : id;
 
@@ -12,8 +12,8 @@ function isValidIsraeliID(id) {
             return counter + (step > 9 ? step - 9 : step);
         }) % 10 === 0;
 }
-const PatientsSchema = mongoose.Schema({
 
+const PatientsSchema = mongoose.Schema({
     tz: {
         type: String,
         require,
@@ -52,6 +52,7 @@ const PatientsSchema = mongoose.Schema({
         //     message: props => `${props.value} letters only`
         // }
     },
+
     password: {
         type: String,
         minlength: '4',
@@ -64,6 +65,7 @@ const PatientsSchema = mongoose.Schema({
         //     message: props => `${props.value} is not a valid password`
         // }
     },
+
     phone: {
         type: String,
         validate: {
@@ -82,4 +84,5 @@ const PatientsSchema = mongoose.Schema({
         type: [visit]
     }
 })
+
 module.exports = mongoose.model('patients', PatientsSchema, 'patients')

@@ -2,6 +2,7 @@ const express = require("express")
 const router=express.Router()
 const professions=require("../Model/professions")
 
+//Get all professions
 router.get("/getAllProfessions",async (req,res)=>{
     professions.find((err,result)=>{
         if(!err){
@@ -15,4 +16,6 @@ router.get("/getAllProfessions",async (req,res)=>{
         }
     })
 })
+
+
 module.exports = router
