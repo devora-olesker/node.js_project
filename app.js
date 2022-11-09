@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 const routers = require('./routers')
+require("dotenv").config();
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -30,7 +31,7 @@ db.on('open', () => {
 
 
 //run server
-const port = process.env.PORT
+const port = process.env.PORT 
 app.listen(port, async() => {
     console.log(`I'm running on port ${port}`);
 })

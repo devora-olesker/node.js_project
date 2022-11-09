@@ -72,7 +72,7 @@ router.get("/GetPatientByNameAndPassword/:name/:pass", async (req, res) => {
 
 
 //Add a new patient
-router.put("/addPatient", async (req, res) => {
+router.post("/addPatient", async (req, res) => {
     const { tz, tz_pic, fname, lname, password, phone, address, visits } = await req.body
     patients.create(
         { tz, tz_pic, fname, lname, password, phone, address, visits }
@@ -216,7 +216,7 @@ router.post("/addVisitToUser/:tz", async (req, res) => {
             console.log(paitant)
             if (!v) {
                 console.log('no data sent in body')
-                res.status = 404
+                res.status = 400
                 res.end()
             }
             else {

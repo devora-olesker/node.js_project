@@ -17,5 +17,4 @@ router.get("/getAllProfessions",async (req,res)=>{
     })
 })
 
-
 module.exports = router
