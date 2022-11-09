@@ -1,4 +1,3 @@
-const GenericController=require('./Controllers/GenericController')
 const PatiantsController=require('./Controllers/PatiantsController')
 const DoctorController=require('./Controllers/DoctorController')
 const ProfessionsController=require('./Controllers/ProfessionController')
