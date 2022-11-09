@@ -18,7 +18,7 @@ app.use(cors())
 app.use(routers)
 
 //connect to data base
-myMongoose.connect("mongodb://localhost:27017/clinicDB",
+myMongoose.connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
     {
         useNewUrlParser: true, useUnifiedTopology: true
     }
@@ -30,7 +30,7 @@ db.on('open', () => {
 
 
 //run server
-const port = `1234`
+const port = process.env.PORT
 app.listen(port, async() => {
     console.log(`I'm running on port ${port}`);
 })
